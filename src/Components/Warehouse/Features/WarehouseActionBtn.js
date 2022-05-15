@@ -1,4 +1,5 @@
 import React, { useContext, useState } from 'react';
+import { NavLink } from 'react-router-dom';
 import { ProductContext } from '../../../App';
 
 export default (props) => {
@@ -12,7 +13,9 @@ export default (props) => {
     }
     return(
         <div>
-            <button>VIEW</button>
+            <NavLink to={"/products/"+id} state={{ id: id}}>
+                <button>VIEW</button>
+            </NavLink>
             <button>EDIT</button>
             <button onClick={onClickHandler}>DELETE</button>
         </div>

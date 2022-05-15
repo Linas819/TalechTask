@@ -12,3 +12,14 @@
   align-items: center;
   justify-content: center;
 }
+
+.grid-product-view-edit {
+  display: grid;
+  grid-template-columns: max-content max-content;
+  justify-content: center;
+}
+
+.grid-product-view-edit-item {
+  display: flex;
+  justify-content: flex-start;
+}
