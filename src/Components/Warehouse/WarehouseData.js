@@ -23,7 +23,7 @@ export default function WarehouseData() {
     return(
         <div>
             <PageHeader header="Products"/>
-            <div className="ag-theme-alpine" style={{height: 400, width: "100%"}}>
+            <div className="ag-theme-alpine" style={{height: 700, width: "100%"}}>
                 <AgGridReact
                     rowData={productContext.productsState.warehouseData}
                     columnDefs={columnDefs}

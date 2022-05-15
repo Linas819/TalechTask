@@ -14,7 +14,7 @@ export default class PageHeader extends Component {
                 <div className='grid-item'>
                     {this.state.header === "Products" &&
                         <NavLink to={"/products/create"}>
-                            <button>Create product</button>
+                            <button style={{backgroundColor: '#4CAF50'}}>Create product</button>
                         </NavLink>}
                 </div>
                 <div className='grid-item'>

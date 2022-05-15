@@ -14,12 +14,12 @@ export default (props) => {
     return(
         <div>
             <NavLink to={"/products/"+id} state={{ id: id}}>
-                <button>VIEW</button>
+                <button style={{backgroundColor: '#6a6868'}}>VIEW</button>
             </NavLink>
             <NavLink to={"/products/"+id+"/edit"} state={{ id: id}}>
-                <button>EDIT</button>
+                <button style={{backgroundColor: '#3d34b8'}}>EDIT</button>
             </NavLink>
-            <button onClick={onClickHandler}>DELETE</button>
+            <button onClick={onClickHandler} style={{backgroundColor: '#b83434'}}>DELETE</button>
         </div>
     );
 }

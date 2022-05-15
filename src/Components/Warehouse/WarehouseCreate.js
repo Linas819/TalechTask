@@ -43,7 +43,7 @@ export default function WarehouseCreate() {
             <input placeholder='Type' name='type' type='number' min={0} max={5} step={1} onChange={onChangeHandler}/><br/><br/>
             <input placeholder='Weight' name='weight' type='number' min={0.000} max={9999999} step={0.001} onChange={onChangeHandler}/><br/><br/>
             <input placeholder='Color' name='color' onChange={onChangeHandler}/><br/><br/>
-            <button onClick={onClickHandler}>Save</button>
+            <button onClick={onClickHandler} style={{backgroundColor: '#4CAF50'}}>Save</button>
         </div>
     );
 }

@@ -88,7 +88,7 @@ export default function WareHouseEdit() {
                     <input name='color' onChange={onChangeHandler} value={product.color}/>
                 </div>
             </div>
-            <button onClick={onClickHandler}>Save</button>
+            <button onClick={onClickHandler} style={{backgroundColor: '#4CAF50'}}>Save</button>
         </div>
     );
 }
