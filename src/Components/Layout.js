@@ -4,6 +4,7 @@ import Home from "./Home";
 import WarehouseData from "./Warehouse/WarehouseData";
 import WarehouseCreate from "./Warehouse/WarehouseCreate";
 import WarehouseView from "./Warehouse/WarehouseView";
+import WareHouseEdit from "./Warehouse/WarehouseEdit";
 
 export default class Layout extends Component {
     render() {
@@ -13,6 +14,7 @@ export default class Layout extends Component {
                 <Route exact path="/products" element={<WarehouseData/>}/>
                 <Route exact path="/products/create" element={<WarehouseCreate/>}/>
                 <Route exact path="/products/:id" element={<WarehouseView/>}/>
+                <Route exact path="/products/:id/edit" element={<WareHouseEdit/>}/>
             </Routes>
         );
     }

@@ -14,9 +14,18 @@ export default function WarehouseCreate() {
         color: ""
     });
     function onChangeHandler(event) {
-        setProduct(prevState => {
-            return { ...prevState, [event.target.name]: event.target.value }
-        })
+        switch(event.target.name) {
+            case 'name':
+            case 'color':
+                setProduct(prevState => {
+                    return { ...prevState, [event.target.name]: event.target.value }
+                })
+                break;
+            default:
+                setProduct(prevState => {
+                    return { ...prevState, [event.target.name]: Number(event.target.value) }
+                })
+        }
     }
     function onClickHandler() {
         let products = productContext.productsState.warehouseData;
@@ -30,9 +39,9 @@ export default function WarehouseCreate() {
         <div>
             <PageHeader header="Create product"/>
             <input placeholder='Name' name='name' onChange={onChangeHandler}/><br/><br/>
-            <input placeholder='EAN' name='ean' onChange={onChangeHandler}/><br/><br/>
-            <input placeholder='Type' name='type' onChange={onChangeHandler}/><br/><br/>
-            <input placeholder='Weight' name='weight' onChange={onChangeHandler}/><br/><br/>
+            <input placeholder='EAN' name='ean' type='number' min={1} max={999999999} step={1} onChange={onChangeHandler}/><br/><br/>
+            <input placeholder='Type' name='type' type='number' min={0} max={5} step={1} onChange={onChangeHandler}/><br/><br/>
+            <input placeholder='Weight' name='weight' type='number' min={0.000} max={9999999} step={0.001} onChange={onChangeHandler}/><br/><br/>
             <input placeholder='Color' name='color' onChange={onChangeHandler}/><br/><br/>
             <button onClick={onClickHandler}>Save</button>
         </div>

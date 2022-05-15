@@ -16,7 +16,9 @@ export default (props) => {
             <NavLink to={"/products/"+id} state={{ id: id}}>
                 <button>VIEW</button>
             </NavLink>
-            <button>EDIT</button>
+            <NavLink to={"/products/"+id+"/edit"} state={{ id: id}}>
+                <button>EDIT</button>
+            </NavLink>
             <button onClick={onClickHandler}>DELETE</button>
         </div>
     );
