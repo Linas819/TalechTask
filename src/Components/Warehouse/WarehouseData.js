@@ -16,7 +16,7 @@ const columnDefs = [
 export default function WarehouseData() {
 
     const productContext = useContext(ProductContext);
-    const [frameworkComponents, setframeworkComponents] = useState({
+    const [frameworkComponents] = useState({
         warehouseActionBtn: WarehouseActionBtn
     });
 
@@ -28,7 +28,7 @@ export default function WarehouseData() {
                     rowData={productContext.productsState.warehouseData}
                     columnDefs={columnDefs}
                     overlayNoRowsTemplate="No warehouse products"
-                    frameworkComponents={frameworkComponents}
+                    components={frameworkComponents}
                     >
                 </AgGridReact>
             </div>
