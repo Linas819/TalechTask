@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
 
 export default class PageHeader extends Component {
     constructor(props) {
@@ -12,7 +13,9 @@ export default class PageHeader extends Component {
             <div className='grid-container'>
                 <div className='grid-item'>
                     {this.state.header === "Products" &&
-                        <button>Create product</button>}
+                        <NavLink to={"/products/create"}>
+                            <button>Create product</button>
+                        </NavLink>}
                 </div>
                 <div className='grid-item'>
                     <h1>{this.state.header}</h1>

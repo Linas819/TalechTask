@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import { AgGridReact } from 'ag-grid-react';
 import PageHeader from '../PageHeader';
 import { ProductContext } from '../../App';
@@ -15,12 +15,6 @@ const columnDefs = [
 export default function WarehouseData() {
 
     const productContext = useContext(ProductContext);
-    
-    useEffect(() => {
-        const result = localStorage.getItem('products');
-        const products = JSON.parse(result);
-        productContext.productsDispatch({type: 'setProducts', products});
-    });
 
     return(
         <div>
