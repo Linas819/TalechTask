@@ -11,23 +11,26 @@ export default (props) => {
             let productsList = productContext.productsState.productsList;
             let priceHistory = productContext.productsState.priceHistory;
             let product = productsList.find(prod => prod.id === id);
-            product.price = price;
-            productsList = productsList.map(function(prod) {
-                if(prod.id === id)
-                    return product
-                else 
-                    return prod
-            });
-            priceHistory.push({
-                id: priceHistory.length+1,
-                price: price,
-                productId: id,
-                modifiedDateTime: new Date()
-            });
-            localStorage.setItem('products', JSON.stringify(productsList));
-            localStorage.setItem('priceHistory', JSON.stringify(priceHistory));
-            productContext.productsDispatch({type: 'setProducts', productsList});
-            productContext.productsDispatch({type: 'setPriceHistory', priceHistory});
+            if(product.price !== price)
+            {
+                product.price = price;
+                productsList = productsList.map(function(prod) {
+                    if(prod.id === id)
+                        return product
+                    else 
+                        return prod
+                });
+                priceHistory.push({
+                    id: priceHistory.length+1,
+                    price: price,
+                    productId: id,
+                    modifiedDateTime: new Date()
+                });
+                localStorage.setItem('products', JSON.stringify(productsList));
+                localStorage.setItem('priceHistory', JSON.stringify(priceHistory));
+                productContext.productsDispatch({type: 'setProducts', productsList});
+                productContext.productsDispatch({type: 'setPriceHistory', priceHistory});
+            }
         }
     }
     function onChangeHandler(event) {

@@ -2,9 +2,9 @@ import React, { useContext, useState } from 'react';
 import { AgGridReact } from 'ag-grid-react';
 import PageHeader from '../PageHeader';
 import { ProductContext } from '../../App';
-import WarehouseActionBtn from './Features/ProductActionBtn';
-import WarehousePriceInput from './Features/ProductPriceInput';
-import WarehouseQuantityInput from './Features/ProductQuantityInput';
+import ProductActionBtn from './Features/ProductActionBtn';
+import ProductPriceInput from './Features/ProductPriceInput';
+import ProductQuantityInput from './Features/ProductQuantityInput';
 
 const columnDefs = [
     { headerName: "Name", field: "name", filter: true, sortable: true, flex: 1, resizable: true, floatingFilter: true },
@@ -12,18 +12,18 @@ const columnDefs = [
     { headerName: "Type", field: "type", filter: false, sortable: true, flex: 1, resizable: true, floatingFilter: false, valueFormatter: typeFormatter },
     { headerName: "Weight (g)", field: "weight", filter: true, sortable: true, flex: 1, resizable: true, floatingFilter: true },
     { headerName: "Color", field: "color", filter: true, sortable: true, flex: 1, resizable: true, floatingFilter: true },
-    { headerName: "Price", field: "price", filter: true, sortable: true, flex: 1, resizable: true, cellRenderer: 'warehousePriceInput' },
-    { headerName: "Quantity", field: "quantity", filter: true, sortable: true, flex: 1, resizable: true, cellRenderer: 'warehouseQuantityInput' },
-    { headerName: "Actions", field: "action", filter: false, sortable: false, flex: 1, resizable: false, cellStyle: {textAlign: "center"}, cellRenderer: 'warehouseActionBtn'  }
+    { headerName: "Price", field: "price", filter: true, sortable: true, flex: 1, resizable: true, cellRenderer: 'productPriceInput' },
+    { headerName: "Quantity", field: "quantity", filter: true, sortable: true, flex: 1, resizable: true, cellRenderer: 'productQuantityInput' },
+    { headerName: "Actions", field: "action", filter: false, sortable: false, flex: 1, resizable: false, cellStyle: {textAlign: "center"}, cellRenderer: 'productActionBtn'  }
 ];
 
-export default function WarehouseData() {
+export default function ProductsData() {
 
     const productContext = useContext(ProductContext);
     const [frameworkComponents] = useState({
-        warehouseActionBtn: WarehouseActionBtn,
-        warehousePriceInput: WarehousePriceInput,
-        warehouseQuantityInput: WarehouseQuantityInput
+        productActionBtn: ProductActionBtn,
+        productPriceInput: ProductPriceInput,
+        productQuantityInput: ProductQuantityInput
     });
 
     return(

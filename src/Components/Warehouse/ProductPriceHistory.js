@@ -32,7 +32,7 @@ export default function WarehousePriceHistory() {
     const { id } = location.state;
     const productContext = useContext(ProductContext);
     const { priceHistory } = productContext.productsState;
-    const priceHistoryById = priceHistory.filter(price => price.productId === id).slice(0, 5);
+    const priceHistoryById = priceHistory.filter(price => price.productId === id).slice(-5);
     options.series[0].data = priceHistoryById.map((element) => {return element.price});
     options.xAxis.categories = priceHistoryById.map((element) => {
         const modifiedDateTime = new Date(element.modifiedDateTime);

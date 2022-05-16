@@ -3,11 +3,11 @@ import PageHeader from '../PageHeader';
 import { useLocation } from 'react-router-dom';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
-import WarehouseView from './ProductInfo';
-import WarehousePriceHistory from './ProductPriceHistory';
-import WarehouseQuantityHistory from './ProductQuantityHistory';
+import ProductInfo from './ProductInfo';
+import ProductPriceHistory from './ProductPriceHistory';
+import ProductQuantityHistory from './ProductQuantityHistory';
 
-export default function WarehouseViewTabs() {
+export default function ProductInfoTabs() {
     const location = useLocation();
     const { id } = location.state;
     return(
@@ -20,13 +20,13 @@ export default function WarehouseViewTabs() {
                     <Tab>Quantity history</Tab>
                 </TabList>
                 <TabPanel>
-                    <WarehouseView/>
+                    <ProductInfo/>
                 </TabPanel>
                 <TabPanel>
-                    <WarehousePriceHistory/>
+                    <ProductPriceHistory/>
                 </TabPanel>
                 <TabPanel>
-                    <WarehouseQuantityHistory/>
+                    <ProductQuantityHistory/>
                 </TabPanel>
             </Tabs>
         </div>

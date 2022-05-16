@@ -32,7 +32,7 @@ export default function WarehouseQuantityHistory() {
     const { id } = location.state;
     const productContext = useContext(ProductContext);
     const { quantityHistory } = productContext.productsState;
-    const quantityHistoryById = quantityHistory.filter(price => price.productId === id).slice(0, 5);
+    const quantityHistoryById = quantityHistory.filter(price => price.productId === id).slice(-5);
     options.series[0].data = quantityHistoryById.map((element) => {return element.quantity});
     options.xAxis.categories = quantityHistoryById.map((element) => {
         const modifiedDateTime = new Date(element.modifiedDateTime);
