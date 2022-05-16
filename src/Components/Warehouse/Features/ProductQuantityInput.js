@@ -8,11 +8,11 @@ export default (props) => {
     function onClickHandler(event) {
         if(event.key === 'Enter')
         {
-            let products = productContext.productsState.warehouseData;
+            let productsList = productContext.productsState.productsList;
             let { quantityHistory } = productContext.productsState;
-            let product = products.find(prod => prod.id === id);
+            let product = productsList.find(prod => prod.id === id);
             product.quantity = quantity;
-            products = products.map(function(prod) {
+            productsList = productsList.map(function(prod) {
                 if(prod.id === id)
                     return product
                 else 
@@ -24,9 +24,9 @@ export default (props) => {
                 productId: id,
                 modifiedDateTime: new Date()
             });
-            localStorage.setItem('products', JSON.stringify(products));
+            localStorage.setItem('products', JSON.stringify(productsList));
             localStorage.setItem('quantityHistory', JSON.stringify(quantityHistory));
-            productContext.productsDispatch({type: 'setProducts', products});
+            productContext.productsDispatch({type: 'setProducts', productsList});
             productContext.productsDispatch({type: 'setQuantityHistory', quantityHistory});
         }
     }

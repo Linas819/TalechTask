@@ -2,9 +2,9 @@ import React, { useContext, useState } from 'react';
 import { AgGridReact } from 'ag-grid-react';
 import PageHeader from '../PageHeader';
 import { ProductContext } from '../../App';
-import WarehouseActionBtn from './Features/WarehouseActionBtn';
-import WarehousePriceInput from './Features/WarehousePriceInput';
-import WarehouseQuantityInput from './Features/WarehouseQuantityInput';
+import WarehouseActionBtn from './Features/ProductActionBtn';
+import WarehousePriceInput from './Features/ProductPriceInput';
+import WarehouseQuantityInput from './Features/ProductQuantityInput';
 
 const columnDefs = [
     { headerName: "Name", field: "name", filter: true, sortable: true, flex: 1, resizable: true, floatingFilter: true },
@@ -31,7 +31,7 @@ export default function WarehouseData() {
             <PageHeader header="Products"/>
             <div className="ag-theme-alpine" style={{height: 700, width: "100%"}}>
                 <AgGridReact
-                    rowData={productContext.productsState.warehouseData}
+                    rowData={productContext.productsState.productsList}
                     columnDefs={columnDefs}
                     overlayNoRowsTemplate="No warehouse products"
                     components={frameworkComponents}

@@ -36,7 +36,6 @@ export default function WarehouseQuantityHistory() {
     options.series[0].data = quantityHistoryById.map((element) => {return element.quantity});
     options.xAxis.categories = quantityHistoryById.map((element) => {
         const modifiedDateTime = new Date(element.modifiedDateTime);
-        let a = modifiedDateTime.getDay();
         return modifiedDateTime.getFullYear() + '-' + (modifiedDateTime.getMonth()+1) + '-' + modifiedDateTime.getDate() + ' '
             + modifiedDateTime.getHours() + ':' + modifiedDateTime.getMinutes() + ':' + modifiedDateTime.getSeconds()
     });

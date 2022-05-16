@@ -11,7 +11,9 @@ export default function WarehouseCreate() {
         ean: 0,
         type: 0,
         weight: 0,
-        color: ""
+        color: "",
+        price: 0,
+        quantity: 0
     });
     function onChangeHandler(event) {
         switch(event.target.name) {
@@ -28,11 +30,11 @@ export default function WarehouseCreate() {
         }
     }
     function onClickHandler() {
-        let products = productContext.productsState.warehouseData;
-        product.id = products.length+1;
-        products.push(product);
-        localStorage.setItem('products', JSON.stringify(products));
-        productContext.productsDispatch({type: 'setProducts', products});
+        let productsList = productContext.productsState.productsList;
+        product.id = productsList.length+1;
+        productsList.push(product);
+        localStorage.setItem('products', JSON.stringify(productsList));
+        productContext.productsDispatch({type: 'setProducts', productsList});
         navigate(-1);
     }
     return(

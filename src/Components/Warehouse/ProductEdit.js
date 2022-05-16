@@ -16,7 +16,7 @@ export default function WareHouseEdit() {
         color: ""
     });
     const productContext = useContext(ProductContext);
-    let currentProduct = productContext.productsState.warehouseData.find(product => product.id === id);
+    let currentProduct = productContext.productsState.productsList.find(product => product.id === id);
     function setData(currentProduct) {
         if(!currentProduct) {
             return;
@@ -42,15 +42,15 @@ export default function WareHouseEdit() {
         }
     }
     function onClickHandler() {
-        let products = productContext.productsState.warehouseData;
-        products = products.map(function(prod) {
+        let productsList = productContext.productsState.productsList;
+        productsList = productsList.map(function(prod) {
             if(prod.id === product.id)
                 return product
             else 
                 return prod
         });
-        localStorage.setItem('products', JSON.stringify(products));
-        productContext.productsDispatch({type: 'setProducts', products});
+        localStorage.setItem('products', JSON.stringify(productsList));
+        productContext.productsDispatch({type: 'setProducts', productsList});
         navigate(-1);
     }
     return(

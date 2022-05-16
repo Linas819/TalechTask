@@ -6,10 +6,10 @@ export default (props) => {
     const [id] = useState(props.data.id);
     const productContext = useContext(ProductContext);
     const onClickHandler = () => {
-        let products = productContext.productsState.warehouseData;
-        products = products.filter(product => product.id !== id);
-        localStorage.setItem('products', JSON.stringify(products));
-        productContext.productsDispatch({type: 'setProducts', products});
+        let productsList = productContext.productsState.productsList;
+        productsList = productsList.filter(product => product.id !== id);
+        localStorage.setItem('products', JSON.stringify(productsList));
+        productContext.productsDispatch({type: 'setProducts', productsList});
     }
     return(
         <div>

@@ -36,7 +36,6 @@ export default function WarehousePriceHistory() {
     options.series[0].data = priceHistoryById.map((element) => {return element.price});
     options.xAxis.categories = priceHistoryById.map((element) => {
         const modifiedDateTime = new Date(element.modifiedDateTime);
-        let a = modifiedDateTime.getDay();
         return modifiedDateTime.getFullYear() + '-' + (modifiedDateTime.getMonth()+1) + '-' + modifiedDateTime.getDate() + ' '
             + modifiedDateTime.getHours() + ':' + modifiedDateTime.getMinutes() + ':' + modifiedDateTime.getSeconds()
     });

@@ -6,7 +6,7 @@ export default function WarehouseView() {
     const location = useLocation();
     const { id } = location.state;
     const productContext = useContext(ProductContext);
-    let product = productContext.productsState.warehouseData.find(product => product.id === id);
+    let product = productContext.productsState.productsList.find(product => product.id === id);
     return(
         <div>
             <div className='grid-product-view-edit'>

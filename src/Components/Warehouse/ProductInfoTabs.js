@@ -3,9 +3,9 @@ import PageHeader from '../PageHeader';
 import { useLocation } from 'react-router-dom';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
-import WarehouseView from './WarehouseView';
-import WarehousePriceHistory from './WarehousePriceHistory';
-import WarehouseQuantityHistory from './WarehouseQuantityHistory';
+import WarehouseView from './ProductInfo';
+import WarehousePriceHistory from './ProductPriceHistory';
+import WarehouseQuantityHistory from './ProductQuantityHistory';
 
 export default function WarehouseViewTabs() {
     const location = useLocation();
