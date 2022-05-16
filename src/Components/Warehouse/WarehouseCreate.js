@@ -29,7 +29,7 @@ export default function WarehouseCreate() {
     }
     function onClickHandler() {
         let products = productContext.productsState.warehouseData;
-        product.id = products.length;
+        product.id = products.length+1;
         products.push(product);
         localStorage.setItem('products', JSON.stringify(products));
         productContext.productsDispatch({type: 'setProducts', products});

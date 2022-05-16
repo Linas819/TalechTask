@@ -21,7 +21,8 @@ export default (props) => {
             priceHistory.push({
                 id: priceHistory.length+1,
                 price: price,
-                productId: id
+                productId: id,
+                modifiedDateTime: new Date()
             });
             localStorage.setItem('products', JSON.stringify(products));
             localStorage.setItem('priceHistory', JSON.stringify(priceHistory));

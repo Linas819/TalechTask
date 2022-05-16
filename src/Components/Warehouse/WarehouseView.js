@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import { useLocation } from 'react-router-dom';
 import { ProductContext } from '../../App';
-import PageHeader from '../PageHeader';
 
 export default function WarehouseView() {
     const location = useLocation();
@@ -10,7 +9,6 @@ export default function WarehouseView() {
     let product = productContext.productsState.warehouseData.find(product => product.id === id);
     return(
         <div>
-            <PageHeader header={"Product: "+id}/>
             <div className='grid-product-view-edit'>
                 <div className='grid-product-view-edit-item'>
                     <b>ID:</b>
