@@ -8,7 +8,8 @@ import React, { useReducer, useEffect } from 'react';
 export const ProductContext = React.createContext();
 
 const initialState = {
-	warehouseData: []
+	warehouseData: [],
+	priceHistory: []
 }
 
 const productReducer = (state, action) => {
@@ -21,6 +22,11 @@ const productReducer = (state, action) => {
 				warehouseData: action.products
 			}
 			break;
+		case 'setPriceHistory':
+			state = {
+				...state,
+				priceHistory: action.priceHistory
+			}
 		default:
 			break;
 	}
@@ -31,8 +37,11 @@ function App() {
 	const [products, dispatch] = useReducer(productReducer, initialState);
 	useEffect(() => {
         const result = localStorage.getItem('products');
+		const priceResult = localStorage.getItem('priceHistory');
         const products = JSON.parse(result);
+		const priceHistory = JSON.parse(priceResult);
         dispatch({type: 'setProducts', products});
+		dispatch({type: 'setPriceHistory', priceHistory});
     }, []);
 	
 	return (

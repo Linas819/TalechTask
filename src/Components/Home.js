@@ -8,7 +8,7 @@ export default class Home extends Component {
             <div>
                 <PageHeader header="Home"/>
                 <NavLink to={"/products"}>
-                    <button>Products</button>
+                    <button style={{backgroundColor: '#4CAF50'}}>Products</button>
                 </NavLink>
             </div>
         );

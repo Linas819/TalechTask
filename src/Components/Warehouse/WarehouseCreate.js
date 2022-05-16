@@ -29,7 +29,7 @@ export default function WarehouseCreate() {
     }
     function onClickHandler() {
         let products = productContext.productsState.warehouseData;
-        product.id = products[products.length-1].id+1;
+        product.id = products.length;
         products.push(product);
         localStorage.setItem('products', JSON.stringify(products));
         productContext.productsDispatch({type: 'setProducts', products});
@@ -38,11 +38,11 @@ export default function WarehouseCreate() {
     return(
         <div>
             <PageHeader header="Create product"/>
-            <input placeholder='Name' name='name' onChange={onChangeHandler}/><br/><br/>
-            <input placeholder='EAN' name='ean' type='number' min={1} max={999999999} step={1} onChange={onChangeHandler}/><br/><br/>
-            <input placeholder='Type' name='type' type='number' min={0} max={5} step={1} onChange={onChangeHandler}/><br/><br/>
-            <input placeholder='Weight' name='weight' type='number' min={0.000} max={9999999} step={0.001} onChange={onChangeHandler}/><br/><br/>
-            <input placeholder='Color' name='color' onChange={onChangeHandler}/><br/><br/>
+            <input placeholder='Name' size='20' name='name' onChange={onChangeHandler}/><br/><br/>
+            <input placeholder='EAN' size='20' name='ean' type='number' min={1} max={999999999} step={1} onChange={onChangeHandler}/><br/><br/>
+            <input placeholder='Type' size='20' name='type' type='number' min={0} max={5} step={1} onChange={onChangeHandler}/><br/><br/>
+            <input placeholder='Weight' size='20' name='weight' type='number' min={0.000} max={9999999} step={0.001} onChange={onChangeHandler}/><br/><br/>
+            <input placeholder='Color' size='20' name='color' onChange={onChangeHandler}/><br/><br/>
             <button onClick={onClickHandler} style={{backgroundColor: '#4CAF50'}}>Save</button>
         </div>
     );

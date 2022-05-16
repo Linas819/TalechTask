@@ -61,31 +61,31 @@ export default function WareHouseEdit() {
                     <b>Name:</b>
                 </div>
                 <div className='grid-product-view-edit-item'>
-                    <input name='name' onChange={onChangeHandler} value={product.name}/>
+                    <input name='name' size='20' onChange={onChangeHandler} value={product.name}/>
                 </div>
                 <div className='grid-product-view-edit-item'>
                     <b>EAN:</b>
                 </div>
                 <div className='grid-product-view-edit-item'>
-                <input name='ean' type='number' min={1} max={999999999} step={1} onChange={onChangeHandler} value={product.ean}/>
+                <input name='ean' size='20' type='number' min={1} max={999999999} step={1} onChange={onChangeHandler} value={product.ean}/>
                 </div>
                 <div className='grid-product-view-edit-item'>
                     <b>Type:</b>
                 </div>
                 <div className='grid-product-view-edit-item'>
-                <input name='type' type='number' min={0} max={5} step={1} onChange={onChangeHandler} value={product.type}/>
+                <input name='type' size='20' type='number' min={0} max={5} step={1} onChange={onChangeHandler} value={product.type}/>
                 </div>
                 <div className='grid-product-view-edit-item'>
                     <b>Weight (g):</b>
                 </div>
                 <div className='grid-product-view-edit-item'>
-                    <input name='weight' type='number' min={0.000} max={9999999} step={0.001} onChange={onChangeHandler} value={product.weight}/>
+                    <input name='weight' size='20' type='number' min={0.000} max={9999999} step={0.001} onChange={onChangeHandler} value={product.weight}/>
                 </div>
                 <div className='grid-product-view-edit-item'>
                     <b>Color:</b>
                 </div>
                 <div className='grid-product-view-edit-item'>
-                    <input name='color' onChange={onChangeHandler} value={product.color}/>
+                    <input name='color' size='20' onChange={onChangeHandler} value={product.color}/>
                 </div>
             </div>
             <button onClick={onClickHandler} style={{backgroundColor: '#4CAF50'}}>Save</button>
