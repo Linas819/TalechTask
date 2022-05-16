@@ -9,7 +9,8 @@ export const ProductContext = React.createContext();
 
 const initialState = {
 	warehouseData: [],
-	priceHistory: []
+	priceHistory: [],
+	quantityHistory: []
 }
 
 const productReducer = (state, action) => {
@@ -27,6 +28,13 @@ const productReducer = (state, action) => {
 				...state,
 				priceHistory: action.priceHistory
 			}
+			break;
+		case 'setQuantityHistory':
+			state = {
+				...state,
+				quantityHistory: action.quantityHistory
+			}
+			break;
 		default:
 			break;
 	}
@@ -38,10 +46,13 @@ function App() {
 	useEffect(() => {
         const result = localStorage.getItem('products');
 		const priceResult = localStorage.getItem('priceHistory');
-        const products = JSON.parse(result);
-		const priceHistory = JSON.parse(priceResult);
+		const quantityResult = localStorage.getItem('setQuantityHistory');
+        const products = result ? JSON.parse(result) : [];
+		const priceHistory = priceResult ? JSON.parse(priceResult) : [];
+		const quantityHistory = quantityResult ? JSON.parse(quantityResult) : [];
         dispatch({type: 'setProducts', products});
 		dispatch({type: 'setPriceHistory', priceHistory});
+		dispatch({type: 'setQuantityHistory', quantityHistory});
     }, []);
 	
 	return (

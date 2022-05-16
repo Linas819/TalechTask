@@ -4,6 +4,7 @@ import PageHeader from '../PageHeader';
 import { ProductContext } from '../../App';
 import WarehouseActionBtn from './Features/WarehouseActionBtn';
 import WarehousePriceInput from './Features/WarehousePriceInput';
+import WarehouseQuantityInput from './Features/WarehouseQuantityInput';
 
 const columnDefs = [
     { headerName: "Name", field: "name", filter: true, sortable: true, flex: 1, resizable: true, floatingFilter: true },
@@ -12,7 +13,7 @@ const columnDefs = [
     { headerName: "Weight (g)", field: "weight", filter: true, sortable: true, flex: 1, resizable: true, floatingFilter: true },
     { headerName: "Color", field: "color", filter: true, sortable: true, flex: 1, resizable: true, floatingFilter: true },
     { headerName: "Price", field: "price", filter: true, sortable: true, flex: 1, resizable: true, cellRenderer: 'warehousePriceInput' },
-    { headerName: "Quantity", field: "quantity", filter: true, sortable: true, flex: 1, resizable: true  },
+    { headerName: "Quantity", field: "quantity", filter: true, sortable: true, flex: 1, resizable: true, cellRenderer: 'warehouseQuantityInput' },
     { headerName: "Actions", field: "action", filter: false, sortable: false, flex: 1, resizable: false, cellStyle: {textAlign: "center"}, cellRenderer: 'warehouseActionBtn'  }
 ];
 
@@ -21,7 +22,8 @@ export default function WarehouseData() {
     const productContext = useContext(ProductContext);
     const [frameworkComponents] = useState({
         warehouseActionBtn: WarehouseActionBtn,
-        warehousePriceInput: WarehousePriceInput
+        warehousePriceInput: WarehousePriceInput,
+        warehouseQuantityInput: WarehouseQuantityInput
     });
 
     return(
